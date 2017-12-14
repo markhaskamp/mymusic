@@ -9,9 +9,14 @@ class App extends Component {
   }
 
   eventsMenu(x) {
+    var target = 'iframe_foo';
+    if (x.frameSameOrigin !== undefined && x.frameSameOrigin) {
+      target = '_blank';
+    }
+      
     return (
-      <div key={x.label}>
-        <a href={x.link} target="foo">{x.label}</a>
+      <div className="labelDiv" key={x.label}>
+        <a className="labelLink" href={x.link} target={target}>{x.label}</a>
       </div>
     );
   }
@@ -19,13 +24,11 @@ class App extends Component {
   externalLink(link) {
     const {store} = this.props;
     store.dispatch({type:'NEW_EXTERNAL_FRAME', value: link});
-    console.log('App.js. externalLink. link: ', link);
   }
 
   render() {
     const {store} = this.props;
     let state = store.getState();
-    console.log('App.js. render(). state:', state);
 
     return (
       <div className="App">
@@ -33,10 +36,12 @@ class App extends Component {
         <div className="main">
           <div className="menu">
             {state.bands.map(x => this.eventsMenu(x))}
+            <hr />
+            {state.places.map(x => this.eventsMenu(x))}
+            <hr />
+            {state.festivals.map(x => this.eventsMenu(x))}
           </div>
-          <div className="externalFrame">
-            externalFrame
-          </div>
+          <iframe className="externalFrame" name="iframe_foo"></iframe>
         </div>
       </div>
     );

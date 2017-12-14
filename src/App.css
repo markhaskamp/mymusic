@@ -23,16 +23,29 @@ div {
   margin: 0.25em;
 }
 
+/*
 .event:hover {
   cursor: pointer;
   color: rgb(0, 188,212);
   background-color: white;
+}
+*/
+
+.labelDiv {
+  padding: 3px;
+}
+
+.labelLink:link, .labelLink:visited, .labelLink:active, .labelLink:hover {
+  color: #f0f0f0;
 }
   
 
 
 .externalFrame {
   padding: 10px;
-  margin-left: 220px;
+  /* margin-left: 220px; */
+  width: 800px;
+  height: 600px;
+
 }
 
