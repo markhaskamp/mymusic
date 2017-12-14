@@ -8,12 +8,18 @@ class App extends Component {
     this.unsubscribe = store.subscribe(() => this.forceUpdate());
   }
 
-  foo() {
-    const { store } = this.props;
-    var state = store.getState();
-    console.log('App.js. foo. state: ', state);
+  eventsMenu(x) {
+    return (
+      <div key={x.label}>
+        <a href={x.link} target="foo">{x.label}</a>
+      </div>
+    );
+  }
 
-    store.dispatch({type: 'WUT'});
+  externalLink(link) {
+    const {store} = this.props;
+    store.dispatch({type:'NEW_EXTERNAL_FRAME', value: link});
+    console.log('App.js. externalLink. link: ', link);
   }
 
   render() {
@@ -23,15 +29,15 @@ class App extends Component {
 
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-
-        <div onClick={this.foo.bind(this)}>click me</div>
+        <div className="heading">What's Playing Where</div>
+        <div className="main">
+          <div className="menu">
+            {state.bands.map(x => this.eventsMenu(x))}
+          </div>
+          <div className="externalFrame">
+            externalFrame
+          </div>
+        </div>
       </div>
     );
   }
