@@ -26,9 +26,15 @@ class App extends Component {
     store.dispatch({type:'NEW_EXTERNAL_FRAME', value: link});
   }
 
+  getWindowDimensions() {
+    return {w: window.innerWidth - 320, h: window.innerHeight};
+  }
+
   render() {
     const {store} = this.props;
     let state = store.getState();
+    
+    var dimensions = this.getWindowDimensions()
 
     return (
       <div className="App">
@@ -41,7 +47,11 @@ class App extends Component {
             <hr />
             {state.festivals.map(x => this.eventsMenu(x))}
           </div>
-          <iframe className="externalFrame" name="iframe_foo"></iframe>
+          <iframe className="externalFrame"
+                  title="iframe_foo"
+                  name="iframe_foo"
+                  width={dimensions.w}
+                  height={dimensions.h}></iframe>
         </div>
       </div>
     );

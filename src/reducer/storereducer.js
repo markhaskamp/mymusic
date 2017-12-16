@@ -22,6 +22,7 @@ function getInitialState() {
                   { label: 'Della Mae',           link: 'https://dellamae.com/tour', frameSameOrigin: true},
                   { label: 'Lyle Lovett',         link: 'https://tour.lylelovett.com' },
                   { label: 'Maria Carrelli',      link: 'https://www.mariacarrellimusic.com'},
+                  { label: 'Maria Carrelli(fb)',  link: 'https://www.facebook.com/mariacarrellimusic/', frameSameOrigin: true},
                   { label: 'Ma Crow',             link: 'https://www.macrowmusic.net', frameSameOrigin: true },
                   { label: 'Nicki Bluhm',         link: 'https://www.nickibluhm.com' },
                   { label: 'Salty Caramels',      link: 'http://www.thesaltycaramels.net/shows.html'},
@@ -42,13 +43,15 @@ function getInitialState() {
                    { label: 'PNC Pavillion',       link: 'http://www.riverbend.org/venue/pnc-pavilion/'},
                    { label: 'Rabbit Hash',         link: 'https://www.rabbithash.com/upcoming-events.html'},
                    { label: 'Rose Music Center',   link: 'http://www.rosemusiccenter.com/events-tickets/event-list.html'},
-                   { label: 'Station Inn (Nashville)', link: 'https://stationinn.com/event/'}
+                   { label: 'Station Inn (Nashville)', link: 'https://stationinn.com/event/'},
+                   { label: 'Southgate House Revival', link: 'https://www.southgatehouse.com/calendar/'}
                  ];
 
     var festivals = [
                       { label: "Bean Blossom",     link: 'http://www.beanblossom.us'},
                       { label: "River Roots",      link: 'http://www.riverroots.org'},
                       { label: "Romp",             link: 'http://www.rompfest.com'},
+                      { label: "Telluride",        link: 'https://www.bluegrass.com/telluride/'},
                       { label: "Whispering Beard", link: 'http://www.whisperingbeard.com/festival/'}
                     ];
 
